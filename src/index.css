@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  @media print {
+    .print-section {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    
+    .no-print {
+      display: none;
+    }
+  }
+}
+
