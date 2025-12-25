@@ -191,11 +191,11 @@ const LinkPreview = ({ url, title, description, image }: { url: string; title: s
         className="block bg-slate-50/80 rounded-lg overflow-hidden border border-slate-200/40 hover:bg-slate-100/80 transition cursor-pointer"
       >
         {image && (
-          <div className="w-full h-28 bg-slate-200 overflow-hidden">
+          <div className="w-full h-20 bg-slate-100 overflow-hidden flex items-center justify-center">
             <img 
               src={image} 
               alt={title}
-              className="w-full h-full object-cover"
+              className="max-w-full max-h-full object-contain"
               onError={(e) => {
                 // Fallback if image fails to load
                 const target = e.target as HTMLImageElement;
