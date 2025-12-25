@@ -271,24 +271,24 @@ const WhatsAppInterface = () => {
   return (
     <div className="max-w-5xl mx-auto">
       {/* Phone Viewport Container */}
-      <div className="relative mx-auto max-w-[360px] md:max-w-[420px]">
-        <div className="relative bg-white rounded-3xl border-2 border-slate-200 shadow-xl overflow-hidden h-[680px] md:h-[780px]">
+      <div className="relative mx-auto max-w-[288px] md:max-w-[336px]">
+        <div className="relative bg-white rounded-3xl border-2 border-slate-200 shadow-xl overflow-hidden h-[544px] md:h-[624px]">
           {/* Navigation Arrows - Top Corners */}
           <button
             onClick={goToPrevious}
-            className="absolute top-4 left-4 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-110"
+            className="absolute top-3 left-3 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-110"
             aria-label="קודם"
           >
-            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={goToNext}
-            className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-110"
+            className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-110"
             aria-label="הבא"
           >
-            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -296,45 +296,45 @@ const WhatsAppInterface = () => {
           {/* WhatsApp Interface */}
           <div className="flex flex-col h-full" style={{ backgroundColor: '#efeae2' }}>
             {/* Header */}
-            <div className="bg-[#075e54] text-white px-4 py-3 flex items-center justify-between relative z-10">
-              <div className="flex items-center gap-3 flex-1 min-w-0">
-                <svg className="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-[#075e54] text-white px-3 py-2.5 flex items-center justify-between relative z-10">
+              <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
-                <div className="w-10 h-10 rounded-full bg-[#25d366]/20 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <div className="w-8 h-8 rounded-full bg-[#25d366]/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-base">אלקטרו סליל</div>
-                  <div className="text-xs text-white/80">Business account</div>
+                  <div className="font-semibold text-sm">אלקטרו סליל</div>
+                  <div className="text-[10px] text-white/80">Business account</div>
                 </div>
               </div>
-              <div className="flex items-center gap-4 flex-shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
             </div>
 
             {/* Status Bar (iPhone style) */}
-            <div className="bg-[#075e54] text-white text-[10px] px-4 py-1 flex justify-between items-center">
+            <div className="bg-[#075e54] text-white text-[8px] px-3 py-0.5 flex justify-between items-center">
               <span>16:38</span>
-              <div className="flex items-center gap-1">
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-0.5">
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M1 9l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3z"/>
                 </svg>
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M1 9l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3z"/>
                 </svg>
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M2 22h20V2z"/>
                 </svg>
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M1 9l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3z"/>
                 </svg>
               </div>
@@ -343,18 +343,18 @@ const WhatsAppInterface = () => {
             {/* Chat Area */}
             <div className="flex-1 overflow-y-auto relative">
               <WhatsAppPattern />
-              <div className="relative z-10 p-4 space-y-4">
+              <div className="relative z-10 p-3 space-y-3">
                 {/* Date Separator */}
                 <div className="flex justify-center">
-                  <div className="bg-white/80 px-3 py-1 rounded-full text-xs text-slate-600">
+                  <div className="bg-white/80 px-2.5 py-0.5 rounded-full text-[10px] text-slate-600">
                     Today
                   </div>
                 </div>
 
                 {/* Encryption Message */}
                 <div className="flex justify-center">
-                  <div className="bg-[#fff9c4] px-4 py-2 rounded-lg max-w-[85%] flex items-center gap-2 text-xs text-slate-700">
-                    <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="bg-[#fff9c4] px-3 py-1.5 rounded-lg max-w-[85%] flex items-center gap-1.5 text-[10px] text-slate-700">
+                    <svg className="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
                     </svg>
                     <span>Messages and calls are end-to-end encrypted. Only people in this chat can read, listen, or share them. <span className="text-blue-600 underline">Learn more</span></span>
@@ -368,7 +368,7 @@ const WhatsAppInterface = () => {
                     className={`flex ${message.sender === 'customer' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
-                      className={`max-w-[75%] rounded-lg px-3 py-2 ${
+                      className={`max-w-[75%] rounded-lg px-2.5 py-1.5 ${
                         message.sender === 'customer'
                           ? 'bg-[#dcf8c6] text-slate-800'
                           : message.sender === 'bot'
@@ -376,12 +376,12 @@ const WhatsAppInterface = () => {
                           : 'bg-[#dcf8c6] text-slate-800'
                       } shadow-sm`}
                     >
-                      <div className="text-sm whitespace-pre-line">{message.text}</div>
-                      <div className="text-[10px] text-slate-500 mt-1 text-left">
+                      <div className="text-xs whitespace-pre-line">{message.text}</div>
+                      <div className="text-[8px] text-slate-500 mt-0.5 text-left">
                         {message.time}
                         {message.sender === 'customer' && (
-                          <span className="mr-1">
-                            <svg className="w-3 h-3 inline" fill="currentColor" viewBox="0 0 24 24">
+                          <span className="mr-0.5">
+                            <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                             </svg>
                           </span>
@@ -394,39 +394,39 @@ const WhatsAppInterface = () => {
             </div>
 
             {/* Input Bar */}
-            <div className="bg-white px-3 py-2 border-t border-slate-200 relative z-10">
-              <div className="flex items-center gap-2">
-                <button className="p-2 text-slate-600 hover:text-slate-800">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white px-2.5 py-1.5 border-t border-slate-200 relative z-10">
+              <div className="flex items-center gap-1.5">
+                <button className="p-1.5 text-slate-600 hover:text-slate-800">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                   </svg>
                 </button>
                 <input
                   type="text"
                   placeholder="Type a message"
-                  className="flex-1 bg-slate-100 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#25d366]"
+                  className="flex-1 bg-slate-100 rounded-full px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-[#25d366]"
                   readOnly
                 />
-                <button className="p-2 text-slate-600 hover:text-slate-800">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="p-1.5 text-slate-600 hover:text-slate-800">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
                   </svg>
                 </button>
-                <button className="p-2 text-slate-600 hover:text-slate-800">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="p-1.5 text-slate-600 hover:text-slate-800">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </button>
-                <button className="p-2 text-slate-600 hover:text-slate-800">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <button className="p-1.5 text-slate-600 hover:text-slate-800">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
                   </svg>
                 </button>
               </div>
               {/* Home Indicator */}
-              <div className="flex justify-center mt-2">
-                <div className="w-32 h-1 bg-black/30 rounded-full"></div>
+              <div className="flex justify-center mt-1.5">
+                <div className="w-24 h-0.5 bg-black/30 rounded-full"></div>
               </div>
             </div>
           </div>
