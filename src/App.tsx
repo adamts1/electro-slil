@@ -180,62 +180,110 @@ const WhatsAppPattern = () => {
   )
 }
 
+// Link Preview Component (WhatsApp style)
+const LinkPreview = ({ url, title, description, image }: { url: string; title: string; description: string; image?: string }) => {
+  return (
+    <div className="mt-2 border-t border-slate-200/30 pt-2">
+      <a 
+        href={url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block bg-slate-50/80 rounded-lg overflow-hidden border border-slate-200/40 hover:bg-slate-100/80 transition cursor-pointer"
+      >
+        {image && (
+          <div className="w-full h-28 bg-slate-200 overflow-hidden">
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback if image fails to load
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+          </div>
+        )}
+        <div className="p-2">
+          <div className="text-[9px] text-slate-500 mb-0.5 truncate" dir="ltr">{new URL(url).hostname}</div>
+          <div className="text-xs font-semibold text-slate-800 mb-0.5 line-clamp-1">{title}</div>
+          <div className="text-[10px] text-slate-600 line-clamp-2 leading-tight">{description}</div>
+        </div>
+      </a>
+    </div>
+  )
+}
+
 // WhatsApp Interface Component
 const WhatsAppInterface = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const demoScenarios = [
     {
-      title: 'לקוח פונה — בלי להמתין',
+      title: 'לקוח פונה עם צורך כללי',
       messages: [
-        { text: 'שלום, אני מעוניין במוצר X', sender: 'customer', time: '16:38' },
-        { text: 'שלום! אני כאן לעזור. איזה מוצר בדיוק?', sender: 'bot', time: '16:38' }
+        { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' }
       ]
     },
     {
-      title: 'הרובוט עונה מיד ומסנן',
+      title: 'הבוט ממקד את הצורך – בלי בלבול',
       messages: [
-        { text: 'שלום, אני מעוניין במוצר X', sender: 'customer', time: '16:38' },
-        { text: 'שלום! אני כאן לעזור. איזה מוצר בדיוק?', sender: 'bot', time: '16:38' },
-        { text: 'מוצר Y', sender: 'customer', time: '16:39' },
-        { text: 'מצוין! הנה המידע על המוצר:\n• מחיר: החל מ-₪XXX\n• זמינות: במלאי\n• משלוח: 2-3 ימי עסקים', sender: 'bot', time: '16:39' }
+        { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
+        { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' }
       ]
     },
     {
-      title: 'הלקוח מגיע מוכן לנציג',
+      title: 'הצגת מוצר נבחר – בלי קטלוג עמוס',
       messages: [
-        { text: 'שלום, אני מעוניין במוצר X', sender: 'customer', time: '16:38' },
-        { text: 'שלום! אני כאן לעזור. איזה מוצר בדיוק?', sender: 'bot', time: '16:38' },
-        { text: 'מוצר Y', sender: 'customer', time: '16:39' },
-        { text: 'מצוין! הנה המידע על המוצר:\n• מחיר: החל מ-₪XXX\n• זמינות: במלאי\n• משלוח: 2-3 ימי עסקים', sender: 'bot', time: '16:39' },
-        { text: 'אני מעוניין בהצעה מחיר', sender: 'customer', time: '16:40' },
-        { text: 'מעביר אותך לנציג שלנו שיטפל בזה מיד...', sender: 'bot', time: '16:40' }
+        { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
+        { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' },
+        { text: '2', sender: 'customer', time: '16:40' },
+        { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' }
       ]
     },
     {
-      title: 'נציג אחד אחראי ללקוח',
+      title: 'הפניה לאתר – שליטה מלאה במחיר',
       messages: [
-        { text: 'שלום, אני מעוניין במוצר X', sender: 'customer', time: '16:38' },
-        { text: 'שלום! אני כאן לעזור. איזה מוצר בדיוק?', sender: 'bot', time: '16:38' },
-        { text: 'מוצר Y', sender: 'customer', time: '16:39' },
-        { text: 'מצוין! הנה המידע על המוצר:\n• מחיר: החל מ-₪XXX\n• זמינות: במלאי\n• משלוח: 2-3 ימי עסקים', sender: 'bot', time: '16:39' },
-        { text: 'אני מעוניין בהצעה מחיר', sender: 'customer', time: '16:40' },
-        { text: 'מעביר אותך לנציג שלנו שיטפל בזה מיד...', sender: 'bot', time: '16:40' },
-        { text: 'שלום! אני דני, הנציג שלך. שמח לעזור עם הצעת המחיר.', sender: 'agent', time: '16:41' }
+        { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
+        { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' },
+        { text: '2', sender: 'customer', time: '16:40' },
+        { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' },
+        { text: '1', sender: 'customer', time: '16:41' },
+        { 
+          text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.', 
+          sender: 'bot', 
+          time: '16:41',
+          linkPreview: {
+            url: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg',
+            title: 'מברגה / מקדחה רוטטת DeWALT DCD996P2',
+            description: 'מברגה / מקדחה רוטטת 18V XRP, כולל 2 סוללות, מתאים לעבודות קשות ושימוש יומיומי',
+            image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=300&fit=crop&q=80'
+          }
+        }
       ]
     },
     {
-      title: 'סגירה נקייה בלי עומס',
+      title: 'נציג אנושי נכנס רק כשצריך',
       messages: [
-        { text: 'שלום, אני מעוניין במוצר X', sender: 'customer', time: '16:38' },
-        { text: 'שלום! אני כאן לעזור. איזה מוצר בדיוק?', sender: 'bot', time: '16:38' },
-        { text: 'מוצר Y', sender: 'customer', time: '16:39' },
-        { text: 'מצוין! הנה המידע על המוצר:\n• מחיר: החל מ-₪XXX\n• זמינות: במלאי\n• משלוח: 2-3 ימי עסקים', sender: 'bot', time: '16:39' },
-        { text: 'אני מעוניין בהצעה מחיר', sender: 'customer', time: '16:40' },
-        { text: 'מעביר אותך לנציג שלנו שיטפל בזה מיד...', sender: 'bot', time: '16:40' },
-        { text: 'שלום! אני דני, הנציג שלך. שמח לעזור עם הצעת המחיר.', sender: 'agent', time: '16:41' },
-        { text: 'תודה! נשמח לקבל את ההצעה', sender: 'customer', time: '16:42' },
-        { text: 'שלחתי לך את ההצעה. נשמח לענות על כל שאלה!', sender: 'agent', time: '16:43' }
+        { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
+        { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' },
+        { text: '2', sender: 'customer', time: '16:40' },
+        { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' },
+        { text: '1', sender: 'customer', time: '16:41' },
+        { 
+          text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.', 
+          sender: 'bot', 
+          time: '16:41',
+          linkPreview: {
+            url: 'https://www.electroslil.co.il/product/makdehat-rutata-dcd996p2',
+            title: 'מברגה / מקדחה רוטטת DeWALT DCD996P2',
+            description: 'מברגה / מקדחה רוטטת 18V XRP, כולל 2 סוללות, מתאים לעבודות קשות ושימוש יומיומי',
+            image: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg'
+          }
+        },
+        { text: 'הצעה', sender: 'customer', time: '16:42' },
+        { text: 'מעולה.\nמחבר אותך לנציג שיאשר זמינות ומחיר בהתאם לצורך שלך.\nרגע אחד…', sender: 'bot', time: '16:42' },
+        { text: 'היי, אני דני מאלקטרו סליל.\nשמח לעזור – בודק זמינות ומכין הצעת מחיר מסודרת.', sender: 'agent', time: '16:43' }
       ]
     }
   ]
@@ -376,7 +424,23 @@ const WhatsAppInterface = () => {
                           : 'bg-[#dcf8c6] text-slate-800'
                       } shadow-sm`}
                     >
-                      <div className="text-xs whitespace-pre-line">{message.text}</div>
+                      <div className="text-xs whitespace-pre-line break-words">
+                        {message.text.split(/(https?:\/\/[^\s]+)/g).map((part, i) => 
+                          part.match(/^https?:\/\//) ? (
+                            <span key={i} className="text-blue-600 underline break-all">{part}</span>
+                          ) : (
+                            <span key={i}>{part}</span>
+                          )
+                        )}
+                      </div>
+                      {message.linkPreview && (
+                        <LinkPreview 
+                          url={message.linkPreview.url}
+                          title={message.linkPreview.title}
+                          description={message.linkPreview.description}
+                          image={message.linkPreview.image}
+                        />
+                      )}
                       <div className="text-[8px] text-slate-500 mt-0.5 text-left">
                         {message.time}
                         {message.sender === 'customer' && (
