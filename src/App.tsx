@@ -40,12 +40,14 @@ const Navbar = () => {
             <button onClick={() => scrollTo('contact')} className="text-slate-700 hover:text-slate-900 transition text-sm">
               יצירת קשר
             </button>
-            <button
-              onClick={() => scrollTo('contact')}
+            <a
+              href="https://wa.me/972533807804"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-900 transition text-sm"
             >
               קביעת שיחת החלטה (15 דק׳)
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -86,12 +88,14 @@ const Navbar = () => {
             <button onClick={() => scrollTo('contact')} className="block w-full text-right py-2 text-slate-700 text-sm">
               יצירת קשר
             </button>
-            <button
-              onClick={() => scrollTo('contact')}
-              className="block w-full text-right py-2 bg-slate-800 text-white rounded-lg text-sm"
+            <a
+              href="https://wa.me/972533807804"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-right py-2 bg-slate-800 text-white rounded-lg text-sm px-4"
             >
               קביעת שיחת החלטה (15 דק׳)
-            </button>
+            </a>
           </div>
         </div>
       )}
@@ -116,12 +120,6 @@ const IconPhone = () => (
 const IconEmail = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-  </svg>
-)
-
-const IconWhatsApp = () => (
-  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378 7.018 7.018 0 01-2.134-1.939c-2.577-2.597-2.577-6.815 0-9.412a6.686 6.686 0 011.939-1.884 7.011 7.011 0 019.412 0 6.686 6.686 0 011.884 1.939c2.597 2.577 2.597 6.815 0 9.412a7.018 7.018 0 01-1.939 2.134 9.868 9.868 0 01-5.229 1.138z"/>
   </svg>
 )
 
@@ -550,7 +548,7 @@ function App() {
       <Section id="hero" className="pt-24 md:pt-32 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            מורידים עומס מהטלפון — בלי לשנות איך העסק עובד
+            מורידים עומס מהטלפון - בלי לשנות איך העסק עובד
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-slate-200 leading-relaxed">
             פיילוט אוטומציה חכם לאלקטרו סליל שמטפל בשאלות חוזרות, מסנן פניות, ומשחרר את העובדים למכירה.
@@ -593,7 +591,7 @@ function App() {
         </div>
         <div className="max-w-3xl mx-auto bg-blue-50 p-6 rounded-2xl border-r-4 border-blue-500">
           <p className="text-xl text-slate-800 text-center leading-relaxed">
-            זה לא חוסר רצון — זה עומס.<br />
+            זה לא חוסר רצון - זה עומס.<br />
             המטרה: להחזיר שליטה.
           </p>
         </div>
@@ -602,12 +600,12 @@ function App() {
       {/* Solution Section */}
       <Section id="solution" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">
-          לא מחליפים עובדים — משחררים אותם
+          לא מחליפים עובדים - משחררים אותם
         </h2>
         <div className="max-w-4xl mx-auto space-y-6">
           <div className="bg-slate-50 p-6 rounded-2xl border-r-4 border-blue-500">
             <p className="text-lg text-slate-700 leading-relaxed">
-              <strong className="text-slate-900 text-xl">עובד דיגיטלי</strong> מטפל בשאלות שחוזרות על עצמן ומסנן פניות — מחירים, מלאי, מידע בסיסי. מכין את הלקוח לפני שהוא מגיע לנציג.
+              <strong className="text-slate-900 text-xl">עובד דיגיטלי</strong> מטפל בשאלות שחוזרות על עצמן ומסנן פניות - מחירים, מלאי, מידע בסיסי. מכין את הלקוח לפני שהוא מגיע לנציג.
             </p>
           </div>
           <div className="bg-slate-50 p-6 rounded-2xl border-r-4 border-blue-500">
@@ -701,7 +699,7 @@ function App() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800">
           כך זה נראה בפועל
         </h2>
-        <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה — לא מערכת חיה*</p>
+        <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
         
         <WhatsAppInterface />
 
@@ -743,7 +741,7 @@ function App() {
               <p className="text-slate-700">אין צורך במערכת מלאי</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-md">
-              <h3 className="text-xl font-bold mb-3 text-slate-800">היקף: 10–30 מוצרים מובילים</h3>
+              <h3 className="text-xl font-bold mb-3 text-slate-800">היקף: 100 מוצרים מובילים</h3>
               <p className="text-slate-700">+ שאלות נפוצות</p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-md">
@@ -774,7 +772,7 @@ function App() {
 
           <div className="bg-blue-50 p-6 rounded-2xl text-center border-r-4 border-blue-500">
             <p className="text-lg font-semibold text-slate-800">
-              בסוף הפיילוט: שיחת החלטה קצרה — ממשיכים או עוצרים.
+              בסוף הפיילוט: שיחת החלטה קצרה - ממשיכים או עוצרים.
             </p>
           </div>
         </div>
@@ -838,7 +836,7 @@ function App() {
           </div>
         </div>
         <div className="max-w-4xl mx-auto mt-8 bg-slate-50 p-6 rounded-2xl text-center">
-          <p className="text-lg text-slate-800 font-semibold">אתה קובע את הכללים — לא הבוט.</p>
+          <p className="text-lg text-slate-800 font-semibold">אתה קובע את הכללים - לא הבוט.</p>
         </div>
       </Section>
 
@@ -851,7 +849,7 @@ function App() {
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
             <h3 className="text-xl font-bold mb-3 text-slate-800">5000 ₪ זה יקר לי</h3>
             <p className="text-slate-700 leading-relaxed">
-              זה פיילוט של 14 יום — לא התחייבות. מטרתו להוכיח ערך. אם זה לא עובד, עוצרים. אם זה עובד, זה חוסך לך הרבה יותר מעלות של עובד אחד. בואו נתחיל עם שיחה קצרה ונבין מה הכי מתאים.
+              זה פיילוט של 14 יום - לא התחייבות. מטרתו להוכיח ערך. אם זה לא עובד, עוצרים. אם זה עובד, זה חוסך לך הרבה יותר מעלות של עובד אחד. בואו נתחיל עם שיחה קצרה ונבין מה הכי מתאים.
             </p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
@@ -863,7 +861,7 @@ function App() {
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
             <h3 className="text-xl font-bold mb-3 text-slate-800">זה לא יבלבל את הלקוחות?</h3>
             <p className="text-slate-700 leading-relaxed">
-              בדיוק ההפך. תשובות מהירות = פחות בלבול. הלקוח מקבל מידע מיד, ואם הוא צריך עובד אנושי — הוא מקבל אותו מיד. הכל חלק וזורם.
+              בדיוק ההפך. תשובות מהירות = פחות בלבול. הלקוח מקבל מידע מיד, ואם הוא צריך עובד אנושי - הוא מקבל אותו מיד. הכל חלק וזורם.
             </p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
@@ -875,7 +873,7 @@ function App() {
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
             <h3 className="text-xl font-bold mb-3 text-slate-800">אני לא רוצה לחשוף מחירים</h3>
             <p className="text-slate-700 leading-relaxed">
-              אתה קובע את הכללים. אפשר לעבוד בלי מחירים בכלל — רק אישור מוצר והעברה לנציג. אפשר גם טווח או מחיר רק אחרי סינון. הכל לפי המדיניות שלך.
+              אתה קובע את הכללים. אפשר לעבוד בלי מחירים בכלל - רק אישור מוצר והעברה לנציג. אפשר גם טווח או מחיר רק אחרי סינון. הכל לפי המדיניות שלך.
             </p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
@@ -896,7 +894,7 @@ function App() {
       {/* Pricing Section */}
       <Section id="pricing" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">
-          השקעה שמחליפה עומס — לא עובדים
+          השקעה שמחליפה עומס - לא עובדים
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-8">
           <div className="bg-slate-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
@@ -924,7 +922,7 @@ function App() {
       <Section id="contact" className="bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight">
-            זה לא שינוי גדול — זו בדיקה חכמה.
+            זה לא שינוי גדול - זו בדיקה חכמה.
           </h2>
           
           <div className="max-w-3xl mx-auto mb-10 space-y-6">
@@ -945,36 +943,48 @@ function App() {
 
           <div className="max-w-2xl mx-auto mb-10">
             <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
-              אם זה עובד — מתקדמים.<br />
-              אם לא — עוצרים. בלי התחייבות.
+              אם זה עובד - מתקדמים.<br />
+              אם לא - עוצרים. בלי התחייבות.
             </p>
           </div>
 
           <div className="mb-8">
-            <button
-              onClick={() => scrollTo('contact')}
+            <a
+              href="https://wa.me/972533807804"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition shadow-lg hover:shadow-xl"
             >
               קביעת שיחת החלטה (15 דק׳)
-            </button>
+            </a>
             <p className="text-slate-300 mt-4 text-lg">
               פגישה קצרה. בלי לחץ. בלי התחייבות.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-slate-300 pt-8 border-t border-slate-700">
-            <div className="flex items-center gap-2">
+            <a 
+              href="tel:+972533807804" 
+              className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
+            >
               <IconPhone />
-              <span>05X-XXXXXXX</span>
-            </div>
-            <div className="flex items-center gap-2">
+              <span>+972533807804</span>
+            </a>
+            <a 
+              href="mailto:tsityat.ai.agency@gmail.com" 
+              className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
+            >
               <IconEmail />
-              <span>hello@yourdomain.com</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <IconWhatsApp />
-              <span>wa.me/972XXXXXXXXX</span>
-            </div>
+              <span>tsityat.ai.agency@gmail.com</span>
+            </a>
+            <a 
+              href="https://wa.me/972533807804" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
+            >
+              <span>WhatsApp</span>
+            </a>
           </div>
         </div>
       </Section>
@@ -982,7 +992,6 @@ function App() {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-8 no-print">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2024 אלקטרו סליל. כל הזכויות שמורות.</p>
         </div>
       </footer>
     </div>
