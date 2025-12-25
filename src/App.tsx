@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 // Small reusable components
 const Navbar = () => {
@@ -217,6 +217,7 @@ const LinkPreview = ({ url, title, description, image }: { url: string; title: s
 // WhatsApp Interface Component
 const WhatsAppInterface = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const chatAreaRef = useRef<HTMLDivElement>(null)
 
   const demoScenarios = [
     {
@@ -257,7 +258,7 @@ const WhatsAppInterface = () => {
             url: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg',
             title: 'מברגה / מקדחה רוטטת DeWALT DCD996P2',
             description: 'מברגה / מקדחה רוטטת 18V XRP, כולל 2 סוללות, מתאים לעבודות קשות ושימוש יומיומי',
-            image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=300&fit=crop&q=80'
+            image: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg'
           }
         }
       ]
@@ -300,19 +301,34 @@ const WhatsAppInterface = () => {
     setCurrentIndex(index)
   }
 
-  // Keyboard navigation
+  // Keyboard navigation (reversed for RTL)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') {
-        goToNext()
+        goToPrevious() // Reversed for RTL
       } else if (e.key === 'ArrowLeft') {
-        goToPrevious()
+        goToNext() // Reversed for RTL
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [goToNext, goToPrevious])
+
+  // Scroll to bottom when slide changes
+  useEffect(() => {
+    if (chatAreaRef.current) {
+      // Use setTimeout to ensure DOM is updated before scrolling
+      setTimeout(() => {
+        if (chatAreaRef.current) {
+          chatAreaRef.current.scrollTo({
+            top: chatAreaRef.current.scrollHeight,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
+    }
+  }, [currentIndex])
 
   const currentScenario = demoScenarios[currentIndex]
 
@@ -321,23 +337,23 @@ const WhatsAppInterface = () => {
       {/* Phone Viewport Container */}
       <div className="relative mx-auto max-w-[288px] md:max-w-[336px]">
         <div className="relative bg-white rounded-3xl border-2 border-slate-200 shadow-xl overflow-hidden h-[544px] md:h-[624px]">
-          {/* Navigation Arrows - Top Corners */}
+          {/* Navigation Arrows - Middle Sides */}
           <button
-            onClick={goToPrevious}
-            className="absolute top-3 left-3 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-110"
-            aria-label="קודם"
+            onClick={goToNext}
+            className="absolute top-1/2 -translate-y-1/2 left-2 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+            aria-label="הבא"
           >
-            <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
-            onClick={goToNext}
-            className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-all hover:scale-110"
-            aria-label="הבא"
+            onClick={goToPrevious}
+            className="absolute top-1/2 -translate-y-1/2 right-2 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+            aria-label="קודם"
           >
-            <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
@@ -389,7 +405,7 @@ const WhatsAppInterface = () => {
             </div>
 
             {/* Chat Area */}
-            <div className="flex-1 overflow-y-auto relative">
+            <div ref={chatAreaRef} className="flex-1 overflow-y-auto relative">
               <WhatsAppPattern />
               <div className="relative z-10 p-3 space-y-3">
                 {/* Date Separator */}
