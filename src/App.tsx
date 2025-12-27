@@ -321,17 +321,6 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      {
-        type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?',
-        time: '14:22',
-        buttons: [
-          { id: 'work_framework', title: 'שלד' },
-          { id: 'work_plaster', title: 'טיח / גמר' },
-          { id: 'work_waterproofing', title: 'איטום' },
-          { id: 'work_general', title: 'כללי / אחר' }
-        ]
-      }
     ]
   },
   {
@@ -358,18 +347,6 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      {
-        type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?',
-        time: '14:22',
-        buttons: [
-          { id: 'work_framework', title: 'שלד' },
-          { id: 'work_plaster', title: 'טיח / גמר' },
-          { id: 'work_waterproofing', title: 'איטום' },
-          { id: 'work_general', title: 'כללי / אחר' }
-        ]
-      },
-      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
       { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
       { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' }
     ]
@@ -398,18 +375,6 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      {
-        type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?',
-        time: '14:22',
-        buttons: [
-          { id: 'work_framework', title: 'שלד' },
-          { id: 'work_plaster', title: 'טיח / גמר' },
-          { id: 'work_waterproofing', title: 'איטום' },
-          { id: 'work_general', title: 'כללי / אחר' }
-        ]
-      },
-      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
       { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
       { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
       {
@@ -447,18 +412,6 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      {
-        type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?',
-        time: '14:22',
-        buttons: [
-          { id: 'work_framework', title: 'שלד' },
-          { id: 'work_plaster', title: 'טיח / גמר' },
-          { id: 'work_waterproofing', title: 'איטום' },
-          { id: 'work_general', title: 'כללי / אחר' }
-        ]
-      },
-      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
       { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
       { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
       {
@@ -499,18 +452,6 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      {
-        type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?',
-        time: '14:22',
-        buttons: [
-          { id: 'work_framework', title: 'שלד' },
-          { id: 'work_plaster', title: 'טיח / גמר' },
-          { id: 'work_waterproofing', title: 'איטום' },
-          { id: 'work_general', title: 'כללי / אחר' }
-        ]
-      },
-      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
       { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
       { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
       {
@@ -552,18 +493,6 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      {
-        type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?',
-        time: '14:22',
-        buttons: [
-          { id: 'work_framework', title: 'שלד' },
-          { id: 'work_plaster', title: 'טיח / גמר' },
-          { id: 'work_waterproofing', title: 'איטום' },
-          { id: 'work_general', title: 'כללי / אחר' }
-        ]
-      },
-      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
       { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
       { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
       {
@@ -602,7 +531,7 @@ function App() {
             שינוי גדול · אפס מאמץ
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-slate-200 leading-relaxed">
-            פיילוט אוטומציה חכם לאלקטרו סליל שמטפל בשאלות חוזרות, מסנן פניות, ומשחרר את העובדים למכירה.
+            פיילוט אוטומציה חכם לאלקטרו סליל שמטפל בשאלות חוזרות, מסנן פניות, ומשחררים את העובדים למכירה.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
@@ -620,34 +549,6 @@ function App() {
           </div>
         </div>
       </Section>
-
-      {/* Pain Section */}
-      <Section id="pain" className="bg-slate-50">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">
-          כאב יומיומי
-        </h2>
-        <div className="max-w-3xl mx-auto space-y-4 mb-8">
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <p className="text-lg text-slate-800">עומס טלפוני מתמשך ושאלות חוזרות</p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <p className="text-lg text-slate-800">עובדים תקועים על "מחיר/זמינות" במקום מכירה</p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <p className="text-lg text-slate-800">לקוחות מחכים ומתייאשים בשעות שיא</p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md">
-            <p className="text-lg text-slate-800">פניות מתפספסות / אין תיעוד</p>
-          </div>
-        </div>
-        <div className="max-w-3xl mx-auto bg-blue-50 p-6 rounded-2xl border-r-4 border-blue-500">
-          <p className="text-xl text-slate-800 text-center leading-relaxed">
-            זה לא חוסר רצון - זה עומס.<br />
-            המטרה: להחזיר שליטה.
-          </p>
-        </div>
-      </Section>
-
       {/* Solution Section */}
       <Section id="solution" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">
@@ -892,58 +793,6 @@ function App() {
           <p className="text-lg text-slate-800 font-semibold">אתה קובע את הכללים - לא הבוט.</p>
         </div>
       </Section>
-
-      {/* FAQ Section */}
-      <Section id="faq" className="bg-slate-50">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">
-          שאלות נפוצות
-        </h2>
-        <div className="max-w-3xl mx-auto space-y-6">
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">5000 ₪ זה יקר לי</h3>
-            <p className="text-slate-700 leading-relaxed">
-              זה פיילוט של 14 יום - לא התחייבות. מטרתו להוכיח ערך. אם זה לא עובד, עוצרים. אם זה עובד, זה חוסך לך הרבה יותר מעלות של עובד אחד. בואו נתחיל עם שיחה קצרה ונבין מה הכי מתאים.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">הלקוחות שלי אוהבים טלפון</h3>
-            <p className="text-slate-700 leading-relaxed">
-              אנחנו לא מסירים את הטלפון. אנחנו רק הופכים אותו לחכם יותר. הלקוחות עדיין מתקשרים, אבל מקבלים תשובות מהירות יותר, והעובדים שלך פנויים למכור.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">זה לא יבלבל את הלקוחות?</h3>
-            <p className="text-slate-700 leading-relaxed">
-              בדיוק ההפך. תשובות מהירות = פחות בילבול. הלקוח מקבל מידע מיד, ואם הוא צריך עובד אנושי - הוא מקבל אותו מיד. הכל חלק וזורם.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">אין לי מערכת מלאי</h3>
-            <p className="text-slate-700 leading-relaxed">
-              זה בדיוק למה אנחנו מתחילים עם קטלוג מהאתר. אין צורך במערכת מלאי. הפיילוט עובד עם מה שכבר יש לך. אחרי שזה מוכיח ערך, אפשר להוסיף אינטגרציות מתקדמות.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">אני לא רוצה לחשוף מחירים</h3>
-            <p className="text-slate-700 leading-relaxed">
-              אתה קובע את הכללים. אפשר לעבוד בלי מחירים בכלל - רק אישור מוצר והעברה לנציג. אפשר גם טווח או מחיר רק אחרי סינון. הכל לפי המדיניות שלך.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">מה אם זה לא יעבוד?</h3>
-            <p className="text-slate-700 leading-relaxed">
-              בדיוק בשביל זה אנחנו מתחילים עם פיילוט. אתה רואה תוצאות תוך שבועיים, ואז מחליט. אין התחייבות ארוכת טווח בלי לראות שזה עובד.
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
-            <h3 className="text-xl font-bold mb-3 text-slate-800">אפשר Real-time מלאי?</h3>
-            <p className="text-slate-700 leading-relaxed">
-              כן. אבל רק אחרי שהפיילוט מוכיח ערך. קודם נוודא שהבסיס עובד, ואז נוסיף אינטגרציות מתקדמות כמו מלאי בזמן אמת.
-            </p>
-          </div>
-        </div>
-      </Section>
-
       {/* Pricing Section */}
       <Section id="pricing" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800">
