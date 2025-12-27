@@ -206,7 +206,7 @@ const WhatsAppInterface = () => {
       ]
     },
     {
-      title: 'הבוט ממקד את הצורך – בלי בלבול',
+      title: 'הבוט ממקד את הצורך – בלי בילבול',
       messages: [
         { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
         { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' }
@@ -816,7 +816,7 @@ function App() {
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
             <h3 className="text-xl font-bold mb-3 text-slate-800">זה לא יבלבל את הלקוחות?</h3>
             <p className="text-slate-700 leading-relaxed">
-              בדיוק ההפך. תשובות מהירות = פחות בלבול. הלקוח מקבל מידע מיד, ואם הוא צריך עובד אנושי - הוא מקבל אותו מיד. הכל חלק וזורם.
+              בדיוק ההפך. תשובות מהירות = פחות בילבול. הלקוח מקבל מידע מיד, ואם הוא צריך עובד אנושי - הוא מקבל אותו מיד. הכל חלק וזורם.
             </p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-md border-r-4 border-blue-500">
