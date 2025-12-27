@@ -110,7 +110,7 @@ async function sendStateResponse(userId: string, state: ConversationState, conte
       
     case 'human_agent':
       await sendWhatsAppMessage(
-        createTextMessage(userId, 'היי, אני דני מאלקטרו סליל.\nשמח לעזור – בודק זמינות ומכין הצעת מחיר מסודרת.')
+        createTextMessage(userId, 'היי, אני דני מאלקטרו סליל.\nשמח לעזור - בודק זמינות ומכין הצעת מחיר מסודרת.')
       )
       break
       

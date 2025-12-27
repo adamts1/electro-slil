@@ -139,7 +139,7 @@ const defaultDemoScenarios: DemoScenario[] = [
     ]
   },
   {
-    title: 'הבוט ממקד את הצורך – בלי בילבול',
+    title: 'הבוט ממקד את הצורך - בלי בילבול',
     messages: [
       { type: 'user_text', text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', time: '16:38' },
       { 
@@ -155,7 +155,7 @@ const defaultDemoScenarios: DemoScenario[] = [
     ]
   },
   {
-    title: 'הצגת מוצר נבחר – בלי קטלוג עמוס',
+    title: 'הצגת מוצר נבחר - בלי קטלוג עמוס',
     messages: [
       { type: 'user_text', text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', time: '16:38' },
       { 
@@ -181,7 +181,7 @@ const defaultDemoScenarios: DemoScenario[] = [
     ]
   },
   {
-    title: 'הפניה לאתר – שליטה מלאה במחיר',
+    title: 'הפניה לאתר - שליטה מלאה במחיר',
     messages: [
       { type: 'user_text', text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', time: '16:38' },
       { 
@@ -223,7 +223,7 @@ const defaultDemoScenarios: DemoScenario[] = [
     ]
   },
   {
-    title: 'מעבר לנציג – זרימה מלאה',
+    title: 'מעבר לנציג - זרימה מלאה',
     messages: [
       { type: 'user_text', text: 'שלום, אני מעוניין לבדוק אפשרויות משלוח.', time: '16:38' },
       { 
@@ -250,7 +250,65 @@ const defaultDemoScenarios: DemoScenario[] = [
       { type: 'bot_text', text: 'מצוין.\nלצורך הצעת מחיר מדויקת, באיזו עיר אתה נמצא?', time: '16:41' },
       { type: 'user_text', text: 'תל אביב', time: '16:42' },
       { type: 'bot_text', text: 'תודה.\nמחבר אותך לנציג שיאשר זמינות, מחיר ואפשרויות משלוח.\nרגע אחד…', time: '16:42' },
-      { type: 'bot_text', text: 'היי, אני דני מאלקטרו סליל.\nשמח לעזור – בודק זמינות ומכין הצעת מחיר מסודרת עם אפשרויות משלוח.', time: '16:43' }
+      { type: 'bot_text', text: 'היי, אני דני מאלקטרו סליל.\nשמח לעזור - בודק זמינות ומכין הצעת מחיר מסודרת עם אפשרויות משלוח.', time: '16:43' }
+    ]
+  }
+]
+
+// Construction Materials Order Demo Scenarios
+const constructionOrderDemoScenarios: DemoScenario[] = [
+  {
+    title: 'ביצוע הזמנה - חומרי בניין',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      { 
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', 
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      { 
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?', 
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
+      { 
+        type: 'bot_buttons',
+        text: 'לאיזה סוג עבודה החומרים מיועדים?', 
+        time: '14:22',
+        buttons: [
+          { id: 'work_framework', title: 'שלד' },
+          { id: 'work_plaster', title: 'טיח / גמר' },
+          { id: 'work_waterproofing', title: 'איטום' },
+          { id: 'work_general', title: 'כללי / אחר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
+      { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
+      { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
+      { 
+        type: 'bot_buttons',
+        text: 'איך תרצה לקבל את החומרים?', 
+        time: '14:25',
+        buttons: [
+          { id: 'delivery_pickup', title: 'איסוף עצמי' },
+          { id: 'delivery_site', title: 'משלוח לאתר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'איך תרצה לקבל את החומרים?', value: 'משלוח לאתר', choiceId: 'delivery_site', source: 'button', time: '14:26' },
+      { type: 'bot_text', text: 'לאיזו כתובת לשלוח ומתי זה צריך להגיע?', time: '14:26' },
+      { type: 'user_text', text: 'אתר בנייה - אזור תעשייה חולון\nצריך מחר עד 09:00', time: '14:27' },
+      { type: 'bot_text', text: 'סיכום ההזמנה 👇\n• סיליקון ניטרלי Soudal - 20 יח׳\n• חול ים - 3 קוב\n• חצץ 4-8 - 2 קוב\n• מלט אפור - 40 שק\n• בלוקים 20 - 120 יח׳\n• רשת טיח - 10 גלילים\n• משלוח - חולון\n• דחיפות: מחר עד 09:00\n\nמעביר לנציג לאישור ושליחה.', time: '14:28' },
+      { type: 'bot_text', text: 'היי, קיבלתי את ההזמנה 👍\nבודק זמינות ומחירים וחוזר אליך עם הצעה מסודרת.', time: '14:29' }
     ]
   }
 ]
@@ -415,8 +473,7 @@ function App() {
       {/* Demo Section */}
       <Section id="demo" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800">
-          כך זה נראה בפועל
-        </h2>
+          דמו: חנות        </h2>
         <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
         
         <WhatsAppInterface scenarios={defaultDemoScenarios} />
@@ -443,8 +500,21 @@ function App() {
         </div>
       </Section>
 
+      {/* Construction Order Demo Section */}
+      <Section id="demo-order" className="bg-slate-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-slate-800">
+          דמו: ביצוע הזמנה - חומרי בניין
+        </h2>
+        <p className="text-center text-lg text-slate-600 mb-8">
+          הרובוט מארגן את ההזמנה. העובד מאשר ושולח.
+        </p>
+        <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
+        
+        <WhatsAppInterface scenarios={constructionOrderDemoScenarios} />
+      </Section>
+
       {/* Pilot Section */}
-      <Section id="pilot" className="bg-slate-50">
+      <Section id="pilot" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">
           מתחילים חכם. פשוט.
         </h2>
@@ -616,12 +686,12 @@ function App() {
           </div>
           <div className="bg-slate-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
             <h3 className="text-2xl font-bold mb-4 text-slate-800">מערכת מתקדמת</h3>
-            <div className="text-3xl font-bold text-blue-600 mb-4">₪8,000–₪15,000</div>
+            <div className="text-3xl font-bold text-blue-600 mb-4">₪8,000-₪15,000</div>
             <p className="text-slate-700">שלב הבא, אופציונלי</p>
           </div>
           <div className="bg-slate-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
             <h3 className="text-2xl font-bold mb-4 text-slate-800">ליווי חודשי</h3>
-            <div className="text-3xl font-bold text-green-600 mb-4">₪500–₪1,500</div>
+            <div className="text-3xl font-bold text-green-600 mb-4">₪500-₪1,500</div>
             <p className="text-slate-700">שירות שוטף</p>
           </div>
         </div>
