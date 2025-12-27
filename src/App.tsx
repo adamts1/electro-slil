@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <span className="text-xl font-bold text-slate-800">אלקטרו סליל</span>
           </div>
-          
+
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-reverse space-x-6">
             <button onClick={() => scrollTo('pain')} className="text-slate-700 hover:text-slate-900 transition text-sm">
@@ -40,14 +40,6 @@ const Navbar = () => {
             <button onClick={() => scrollTo('contact')} className="text-slate-700 hover:text-slate-900 transition text-sm">
               יצירת קשר
             </button>
-            <a
-              href="https://wa.me/972533807804"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-900 transition text-sm"
-            >
-              קביעת שיחת החלטה (15 דק׳)
-            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -85,17 +77,6 @@ const Navbar = () => {
             <button onClick={() => scrollTo('pricing')} className="block w-full text-right py-2 text-slate-700 text-sm">
               עלות
             </button>
-            <button onClick={() => scrollTo('contact')} className="block w-full text-right py-2 text-slate-700 text-sm">
-              יצירת קשר
-            </button>
-            <a
-              href="https://wa.me/972533807804"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-right py-2 bg-slate-800 text-white rounded-lg text-sm px-4"
-            >
-              קביעת שיחת החלטה (15 דק׳)
-            </a>
           </div>
         </div>
       )}
@@ -165,9 +146,9 @@ const WhatsAppPattern = () => {
       </g>
     </svg>
   `)
-  
+
   return (
-    <div 
+    <div
       className="absolute inset-0"
       style={{
         backgroundImage: `url("data:image/svg+xml,${patternSVG}")`,
@@ -182,16 +163,16 @@ const WhatsAppPattern = () => {
 const LinkPreview = ({ url, title, description, image }: { url: string; title: string; description: string; image?: string }) => {
   return (
     <div className="mt-2 border-t border-slate-200/30 pt-2">
-      <a 
-        href={url} 
-        target="_blank" 
+      <a
+        href={url}
+        target="_blank"
         rel="noopener noreferrer"
         className="block bg-slate-50/80 rounded-lg overflow-hidden border border-slate-200/40 hover:bg-slate-100/80 transition cursor-pointer"
       >
         {image && (
           <div className="w-full h-20 bg-slate-100 overflow-hidden flex items-center justify-center">
-            <img 
-              src={image} 
+            <img
+              src={image}
               alt={title}
               className="max-w-full max-h-full object-contain"
               onError={(e) => {
@@ -248,9 +229,9 @@ const WhatsAppInterface = () => {
         { text: '2', sender: 'customer', time: '16:40' },
         { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' },
         { text: '1', sender: 'customer', time: '16:41' },
-        { 
-          text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.', 
-          sender: 'bot', 
+        {
+          text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.',
+          sender: 'bot',
           time: '16:41',
           linkPreview: {
             url: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg',
@@ -269,9 +250,9 @@ const WhatsAppInterface = () => {
         { text: '2', sender: 'customer', time: '16:40' },
         { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' },
         { text: '1', sender: 'customer', time: '16:41' },
-        { 
-          text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.', 
-          sender: 'bot', 
+        {
+          text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.',
+          sender: 'bot',
           time: '16:41',
           linkPreview: {
             url: 'https://www.electroslil.co.il/product/makdehat-rutata-dcd996p2',
@@ -365,7 +346,7 @@ const WhatsAppInterface = () => {
                 </svg>
                 <div className="w-8 h-8 rounded-full bg-[#25d366]/20 flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
@@ -403,7 +384,7 @@ const WhatsAppInterface = () => {
                 <div className="flex justify-center">
                   <div className="bg-[#fff9c4] px-3 py-1.5 rounded-lg max-w-[85%] flex items-center gap-1.5 text-[10px] text-slate-700">
                     <svg className="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
                     </svg>
                     <span>Messages and calls are end-to-end encrypted. Only people in this chat can read, listen, or share them. <span className="text-blue-600 underline">Learn more</span></span>
                   </div>
@@ -412,20 +393,19 @@ const WhatsAppInterface = () => {
                 {/* Demo Messages */}
                 {currentScenario.messages.map((message, idx) => (
                   <div
-                key={idx}
+                    key={idx}
                     className={`flex ${message.sender === 'customer' ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
-                      className={`max-w-[75%] rounded-lg px-2.5 py-1.5 ${
-                        message.sender === 'customer'
-                          ? 'bg-[#dcf8c6] text-slate-800'
-                          : message.sender === 'bot'
+                      className={`max-w-[75%] rounded-lg px-2.5 py-1.5 ${message.sender === 'customer'
+                        ? 'bg-[#dcf8c6] text-slate-800'
+                        : message.sender === 'bot'
                           ? 'bg-white text-slate-800'
                           : 'bg-[#dcf8c6] text-slate-800'
-                      } shadow-sm`}
+                        } shadow-sm`}
                     >
                       <div className="text-xs whitespace-pre-line break-words">
-                        {message.text.split(/(https?:\/\/[^\s]+)/g).map((part, i) => 
+                        {message.text.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
                           part.match(/^https?:\/\//) ? (
                             <span key={i} className="text-blue-600 underline break-all">{part}</span>
                           ) : (
@@ -434,7 +414,7 @@ const WhatsAppInterface = () => {
                         )}
                       </div>
                       {message.linkPreview && (
-                        <LinkPreview 
+                        <LinkPreview
                           url={message.linkPreview.url}
                           title={message.linkPreview.title}
                           description={message.linkPreview.description}
@@ -446,7 +426,7 @@ const WhatsAppInterface = () => {
                         {message.sender === 'customer' && (
                           <span className="mr-0.5">
                             <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                             </svg>
                           </span>
                         )}
@@ -484,7 +464,7 @@ const WhatsAppInterface = () => {
                 </button>
                 <button className="p-1.5 text-slate-600 hover:text-slate-800">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+                    <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
                   </svg>
                 </button>
               </div>
@@ -508,9 +488,8 @@ const WhatsAppInterface = () => {
           <button
             key={idx}
             onClick={() => goToSlide(idx)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              currentIndex === idx ? 'bg-blue-600 w-6' : 'bg-slate-300'
-            }`}
+            className={`w-2 h-2 rounded-full transition-all ${currentIndex === idx ? 'bg-blue-600 w-6' : 'bg-slate-300'
+              }`}
             aria-label={`מסך ${idx + 1}`}
           />
         ))}
@@ -529,7 +508,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white" dir="rtl">
       <Navbar />
-      
+
       {/* Hero Section */}
       <Section id="hero" className="pt-24 md:pt-32 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="text-center max-w-4xl mx-auto">
@@ -682,7 +661,7 @@ function App() {
           כך זה נראה בפועל
         </h2>
         <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
-        
+
         <WhatsAppInterface />
 
         {/* Flow Row */}
@@ -768,48 +747,42 @@ function App() {
         <div className="max-w-4xl mx-auto space-y-4">
           <div
             onClick={() => setPriceMode('none')}
-            className={`p-6 rounded-2xl border-2 cursor-pointer transition ${
-              priceMode === 'none' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
-            }`}
+            className={`p-6 rounded-2xl border-2 cursor-pointer transition ${priceMode === 'none' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
+              }`}
           >
             <div className="flex items-center gap-3 mb-2">
-              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                priceMode === 'none' ? 'border-blue-500' : 'border-slate-300'
-              }`}>
+              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${priceMode === 'none' ? 'border-blue-500' : 'border-slate-300'
+                }`}>
                 {priceMode === 'none' && <div className="w-3 h-3 rounded-full bg-blue-500" />}
               </div>
               <h3 className="text-xl font-bold text-slate-800">ללא מחיר</h3>
             </div>
             <p className="text-slate-700 mr-8">רק אישור מוצר + נציג מצטרף</p>
           </div>
-          
+
           <div
             onClick={() => setPriceMode('range')}
-            className={`p-6 rounded-2xl border-2 cursor-pointer transition ${
-              priceMode === 'range' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
-            }`}
+            className={`p-6 rounded-2xl border-2 cursor-pointer transition ${priceMode === 'range' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
+              }`}
           >
             <div className="flex items-center gap-3 mb-2">
-              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                priceMode === 'range' ? 'border-blue-500' : 'border-slate-300'
-              }`}>
+              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${priceMode === 'range' ? 'border-blue-500' : 'border-slate-300'
+                }`}>
                 {priceMode === 'range' && <div className="w-3 h-3 rounded-full bg-blue-500" />}
               </div>
               <h3 className="text-xl font-bold text-slate-800">טווח / החל מ-</h3>
             </div>
             <p className="text-slate-700 mr-8">נותנים כיוון, שומרים גמישות</p>
           </div>
-          
+
           <div
             onClick={() => setPriceMode('qualified')}
-            className={`p-6 rounded-2xl border-2 cursor-pointer transition ${
-              priceMode === 'qualified' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
-            }`}
+            className={`p-6 rounded-2xl border-2 cursor-pointer transition ${priceMode === 'qualified' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
+              }`}
           >
             <div className="flex items-center gap-3 mb-2">
-              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                priceMode === 'qualified' ? 'border-blue-500' : 'border-slate-300'
-              }`}>
+              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${priceMode === 'qualified' ? 'border-blue-500' : 'border-slate-300'
+                }`}>
                 {priceMode === 'qualified' && <div className="w-3 h-3 rounded-full bg-blue-500" />}
               </div>
               <h3 className="text-xl font-bold text-slate-800">מחיר לאחר סינון</h3>
@@ -906,7 +879,7 @@ function App() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight">
             שינוי משמעותי. אפקטיבי. מורגש מהשבוע הראשון
           </h2>
-          
+
           <div className="max-w-3xl mx-auto mb-10 space-y-6">
             <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
               בודקים בצורה רגועה ומדידה<br />
@@ -922,37 +895,24 @@ function App() {
               אם לא - עוצרים. בלי התחייבות.
             </p>
           </div>
-
-          <div className="mb-8">
-            <a
-              href="https://wa.me/972533807804"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-5 rounded-xl text-xl font-semibold transition shadow-lg hover:shadow-xl"
-            >
-              קביעת שיחת החלטה (15 דק׳)
-            </a>
-   
-          </div>
-
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-slate-300 pt-8 border-t border-slate-700">
-            <a 
-              href="tel:+972533807804" 
+            <a
+              href="tel:+972533807804"
               className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
             >
               <IconPhone />
               <span>+972533807804</span>
             </a>
-            <a 
-              href="mailto:tsityat.ai.agency@gmail.com" 
+            <a
+              href="mailto:tsityat.ai.agency@gmail.com"
               className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
             >
               <IconEmail />
               <span>tsityat.ai.agency@gmail.com</span>
             </a>
-            <a 
-              href="https://wa.me/972533807804" 
-              target="_blank" 
+            <a
+              href="https://wa.me/972533807804"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
             >
