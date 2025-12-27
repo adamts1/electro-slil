@@ -13,14 +13,20 @@ export interface Button {
   title: string
 }
 
+export type MessageType = 'bot_text' | 'bot_buttons' | 'user_choice' | 'user_text' | 'bot_link'
+
 export interface Message {
-  text: string
-  sender: 'customer' | 'bot' | 'agent'
+  type: MessageType
+  text?: string
   time: string
+  // For bot_buttons and bot_link
+  buttons?: Button[]
+  // For user_choice
+  choiceTitle?: string
+  choiceId?: string
+  choiceSource?: 'button' | 'list'
+  // For bot_link
   linkPreview?: LinkPreviewData
-  buttons?: Button[] // Interactive buttons (max 3)
-  listTitle?: string // For list picker (if more than 3 options)
-  listSections?: Array<{ title: string; buttons: Button[] }> // For list picker
 }
 
 export interface DemoScenario {
@@ -243,62 +249,97 @@ export const WhatsAppInterface = ({
                 </div>
 
                 {/* Demo Messages */}
-                {currentScenario.messages.map((message, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex ${message.sender === 'customer' ? 'justify-end' : 'justify-start'}`}
-                  >
-                    <div
-                      className={`max-w-[75%] rounded-lg px-2.5 py-1.5 ${message.sender === 'customer'
-                        ? 'bg-[#dcf8c6] text-slate-800'
-                        : message.sender === 'bot'
-                          ? 'bg-white text-slate-800'
-                          : 'bg-[#dcf8c6] text-slate-800'
-                        } shadow-sm`}
-                    >
-                      <div className="text-xs whitespace-pre-line break-words">
-                        {message.text.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
-                          part.match(/^https?:\/\//) ? (
-                            <span key={i} className="text-blue-600 underline break-all">{part}</span>
-                          ) : (
-                            <span key={i}>{part}</span>
-                          )
-                        )}
-                      </div>
-                      {message.linkPreview && (
-                        <LinkPreview
-                          url={message.linkPreview.url}
-                          title={message.linkPreview.title}
-                          description={message.linkPreview.description}
-                          image={message.linkPreview.image}
-                        />
-                      )}
-                      {/* Quick Reply Buttons */}
-                      {message.buttons && message.buttons.length > 0 && (
-                        <div className="mt-2 pt-2 border-t border-slate-200/30 space-y-1.5">
-                          {message.buttons.map((button) => (
-                            <div
-                              key={button.id}
-                              className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 text-xs text-blue-700 font-medium text-center"
-                            >
-                              {button.title}
+                {currentScenario.messages.map((message, idx) => {
+                  // Determine if message is from customer or bot based on type
+                  const isCustomer = message.type === 'user_choice' || message.type === 'user_text'
+                  
+                  // Track selected button IDs to hide them in subsequent messages
+                  const selectedButtonIds = new Set<string>()
+                  for (let i = 0; i < idx; i++) {
+                    const prevMsg = currentScenario.messages[i]
+                    if (prevMsg.type === 'user_choice' && prevMsg.choiceId) {
+                      selectedButtonIds.add(prevMsg.choiceId)
+                    }
+                  }
+                  
+                  return (
+                    <div key={idx} className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}>
+                      {message.type === 'user_choice' ? (
+                        // User choice - render as chip bubble
+                        <div className="max-w-[75%]">
+                          <div className="bg-blue-50 border border-blue-200/60 rounded-full px-4 py-2 inline-block shadow-sm">
+                            <div className="flex items-center gap-2">
+                              <span className="text-[10px] text-blue-600/70 font-medium">נבחר</span>
+                              <span className="text-xs text-blue-800 font-medium">{message.choiceTitle}</span>
                             </div>
-                          ))}
+                          </div>
+                          <div className="text-[8px] text-slate-500 mt-1 text-left">
+                            {message.time}
+                            <span className="mr-0.5">
+                              <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        // Bot message or user text
+                        <div
+                          className={`max-w-[75%] rounded-lg px-2.5 py-1.5 ${
+                            isCustomer
+                              ? 'bg-[#dcf8c6] text-slate-800'
+                              : 'bg-white text-slate-800'
+                          } shadow-sm`}
+                        >
+                          {message.text && (
+                            <div className="text-xs whitespace-pre-line break-words">
+                              {message.text.split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+                                part.match(/^https?:\/\//) ? (
+                                  <span key={i} className="text-blue-600 underline break-all">{part}</span>
+                                ) : (
+                                  <span key={i}>{part}</span>
+                                )
+                              )}
+                            </div>
+                          )}
+                          {message.linkPreview && (
+                            <LinkPreview
+                              url={message.linkPreview.url}
+                              title={message.linkPreview.title}
+                              description={message.linkPreview.description}
+                              image={message.linkPreview.image}
+                            />
+                          )}
+                          {/* Quick Reply Buttons - only show unselected buttons */}
+                          {(message.type === 'bot_buttons' || message.type === 'bot_link') && message.buttons && message.buttons.length > 0 && (
+                            <div className="mt-2 pt-2 border-t border-slate-200/30 space-y-1.5">
+                              {message.buttons
+                                .filter((button) => !selectedButtonIds.has(button.id))
+                                .map((button) => (
+                                  <div
+                                    key={button.id}
+                                    className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 text-xs text-blue-700 font-medium text-center cursor-default"
+                                  >
+                                    {button.title}
+                                  </div>
+                                ))}
+                            </div>
+                          )}
+                          <div className="text-[8px] text-slate-500 mt-0.5 text-left">
+                            {message.time}
+                            {isCustomer && (
+                              <span className="mr-0.5">
+                                <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                </svg>
+                              </span>
+                            )}
+                          </div>
                         </div>
                       )}
-                      <div className="text-[8px] text-slate-500 mt-0.5 text-left">
-                        {message.time}
-                        {message.sender === 'customer' && (
-                          <span className="mr-0.5">
-                            <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                            </svg>
-                          </span>
-                        )}
-                      </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
 
