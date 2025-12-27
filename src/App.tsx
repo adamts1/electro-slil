@@ -66,7 +66,7 @@ const Navbar = () => {
             <button onClick={() => scrollTo('solution')} className="block w-full text-right py-2 text-slate-700 text-sm">
               פתרון
             </button>
-            <button onClick={() => scrollTo('demo')} className="block w-full text-right py-2 text-slate-700 text-sm">
+            <button onClick={() => scrollTo('demo1')} className="block w-full text-right py-2 text-slate-700 text-sm">
               דמו
             </button>
             <button onClick={() => scrollTo('pilot')} className="block w-full text-right py-2 text-slate-700 text-sm">
@@ -606,7 +606,7 @@ function App() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
-              onClick={() => scrollTo('demo')}
+              onClick={() => scrollTo('demo1')}
               className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition shadow-lg hover:shadow-xl"
             >
               לראות את הדמו
