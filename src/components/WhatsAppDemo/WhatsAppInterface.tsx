@@ -8,11 +8,19 @@ export interface LinkPreviewData {
   image?: string
 }
 
+export interface Button {
+  id: string
+  title: string
+}
+
 export interface Message {
   text: string
   sender: 'customer' | 'bot' | 'agent'
   time: string
   linkPreview?: LinkPreviewData
+  buttons?: Button[] // Interactive buttons (max 3)
+  listTitle?: string // For list picker (if more than 3 options)
+  listSections?: Array<{ title: string; buttons: Button[] }> // For list picker
 }
 
 export interface DemoScenario {
@@ -264,6 +272,19 @@ export const WhatsAppInterface = ({
                           description={message.linkPreview.description}
                           image={message.linkPreview.image}
                         />
+                      )}
+                      {/* Quick Reply Buttons */}
+                      {message.buttons && message.buttons.length > 0 && (
+                        <div className="mt-2 pt-2 border-t border-slate-200/30 space-y-1.5">
+                          {message.buttons.map((button) => (
+                            <div
+                              key={button.id}
+                              className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 text-xs text-blue-700 font-medium text-center"
+                            >
+                              {button.title}
+                            </div>
+                          ))}
+                        </div>
                       )}
                       <div className="text-[8px] text-slate-500 mt-0.5 text-left">
                         {message.time}

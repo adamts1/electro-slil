@@ -2,6 +2,7 @@
 export { WhatsAppInterface } from './WhatsAppInterface'
 export type { 
   LinkPreviewData, 
+  Button,
   Message, 
   DemoScenario, 
   WhatsAppInterfaceProps 

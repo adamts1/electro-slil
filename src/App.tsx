@@ -142,28 +142,71 @@ const defaultDemoScenarios: DemoScenario[] = [
     title: 'הבוט ממקד את הצורך – בלי בילבול',
     messages: [
       { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
-      { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' }
+      { 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        sender: 'bot', 
+        time: '16:39',
+        buttons: [
+          { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
+          { id: 'category_rotary', title: 'מקדחה רוטטת' },
+          { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
+        ]
+      }
     ]
   },
   {
     title: 'הצגת מוצר נבחר – בלי קטלוג עמוס',
     messages: [
       { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
-      { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' },
-      { text: '2', sender: 'customer', time: '16:40' },
-      { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' }
+      { 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        sender: 'bot', 
+        time: '16:39',
+        buttons: [
+          { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
+          { id: 'category_rotary', title: 'מקדחה רוטטת' },
+          { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
+        ]
+      },
+      { text: 'מקדחה רוטטת', sender: 'customer', time: '16:40' },
+      { 
+        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
+        sender: 'bot', 
+        time: '16:40',
+        buttons: [
+          { id: 'action_product_page', title: 'לראות את דף המוצר באתר' },
+          { id: 'action_quote_request', title: 'לקבל הצעת מחיר מנציג' }
+        ]
+      }
     ]
   },
   {
     title: 'הפניה לאתר – שליטה מלאה במחיר',
     messages: [
       { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
-      { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' },
-      { text: '2', sender: 'customer', time: '16:40' },
-      { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' },
-      { text: '1', sender: 'customer', time: '16:41' },
+      { 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        sender: 'bot', 
+        time: '16:39',
+        buttons: [
+          { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
+          { id: 'category_rotary', title: 'מקדחה רוטטת' },
+          { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
+        ]
+      },
+      { text: 'מקדחה רוטטת', sender: 'customer', time: '16:40' },
+      { 
+        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
+        sender: 'bot', 
+        time: '16:40',
+        buttons: [
+          { id: 'action_product_page', title: 'לראות את דף המוצר באתר' },
+          { id: 'action_quote_request', title: 'לקבל הצעת מחיר מנציג' }
+        ]
+      },
+      { text: 'לראות את דף המוצר באתר', sender: 'customer', time: '16:41' },
       {
-        text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.',
+        text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:',
         sender: 'bot',
         time: '16:41',
         linkPreview: {
@@ -171,7 +214,11 @@ const defaultDemoScenarios: DemoScenario[] = [
           title: 'מברגה / מקדחה רוטטת DeWALT DCD996P2',
           description: 'מברגה / מקדחה רוטטת 18V XRP, כולל 2 סוללות, מתאים לעבודות קשות ושימוש יומיומי',
           image: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg'
-        }
+        },
+        buttons: [
+          { id: 'action_quote_request', title: 'לקבל הצעת מחיר מנציג' },
+          { id: 'action_back', title: 'חזרה' }
+        ]
       }
     ]
   },
@@ -179,24 +226,37 @@ const defaultDemoScenarios: DemoScenario[] = [
     title: 'נציג אנושי נכנס רק כשצריך',
     messages: [
       { text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', sender: 'customer', time: '16:38' },
-      { text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?\n\n1️⃣ מברגה / מקדחה נטענת\n2️⃣ מקדחה רוטטת\n3️⃣ פטישון לעבודות בטון\n\nכתוב 1 / 2 / 3', sender: 'bot', time: '16:39' },
-      { text: '2', sender: 'customer', time: '16:40' },
-      { text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\n🔹 מברגה / מקדחה רוטטת 18V XRP\n🔹 דגם: DCD996P2\n🔹 כולל 2 סוללות\n🔹 מתאים לעבודות קשות ושימוש יומיומי\n\nרוצה:\n1️⃣ לראות את דף המוצר באתר\n2️⃣ לקבל הצעת מחיר מנציג', sender: 'bot', time: '16:40' },
-      { text: '1', sender: 'customer', time: '16:41' },
-      {
-        text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:\n\nאם תרצה מחיר מדויק וזמינות –\nפשוט כתוב לי ״הצעה״.',
-        sender: 'bot',
-        time: '16:41',
-        linkPreview: {
-          url: 'https://www.electroslil.co.il/product/makdehat-rutata-dcd996p2',
-          title: 'מברגה / מקדחה רוטטת DeWALT DCD996P2',
-          description: 'מברגה / מקדחה רוטטת 18V XRP, כולל 2 סוללות, מתאים לעבודות קשות ושימוש יומיומי',
-          image: 'https://www.electroslil.co.il/images/itempics/dcd996p3_05062023135555_large.jpg'
-        }
+      { 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        sender: 'bot', 
+        time: '16:39',
+        buttons: [
+          { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
+          { id: 'category_rotary', title: 'מקדחה רוטטת' },
+          { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
+        ]
       },
-      { text: 'הצעה', sender: 'customer', time: '16:42' },
-      { text: 'מעולה.\nמחבר אותך לנציג שיאשר זמינות ומחיר בהתאם לצורך שלך.\nרגע אחד…', sender: 'bot', time: '16:42' },
-      { text: 'היי, אני דני מאלקטרו סליל.\nשמח לעזור – בודק זמינות ומכין הצעת מחיר מסודרת.', sender: 'bot', time: '16:43' }
+      { text: 'מקדחה רוטטת', sender: 'customer', time: '16:40' },
+      { 
+        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
+        sender: 'bot', 
+        time: '16:40',
+        buttons: [
+          { id: 'action_product_page', title: 'לראות את דף המוצר באתר' },
+          { id: 'action_quote_request', title: 'לקבל הצעת מחיר מנציג' }
+        ]
+      },
+      { text: 'לקבל הצעת מחיר מנציג', sender: 'customer', time: '16:41' },
+      { 
+        text: 'מעולה.\nמחבר אותך לנציג שיאשר זמינות ומחיר בהתאם לצורך שלך.\nרגע אחד…', 
+        sender: 'bot', 
+        time: '16:42' 
+      },
+      { 
+        text: 'היי, אני דני מאלקטרו סליל.\nשמח לעזור – בודק זמינות ומכין הצעת מחיר מסודרת.', 
+        sender: 'bot', 
+        time: '16:43' 
+      }
     ]
   }
 ]
