@@ -848,7 +848,7 @@ function App() {
               className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
             >
               <IconPhone />
-              <span>+972533807804</span>
+              <span>972533807804+</span>
             </a>
             <a
               href="mailto:tsityat.ai.agency@gmail.com"
