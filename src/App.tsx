@@ -334,27 +334,27 @@ const WhatsAppInterface = () => {
     <div className="max-w-5xl mx-auto">
       {/* Phone Viewport Container */}
       <div className="relative mx-auto max-w-[288px] md:max-w-[336px]">
-        <div className="relative bg-white rounded-3xl border-2 border-slate-200 shadow-xl overflow-hidden h-[544px] md:h-[624px]">
-          {/* Navigation Arrows - Middle Sides */}
-          <button
-            onClick={goToNext}
-            className="absolute top-1/2 -translate-y-1/2 left-2 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
-            aria-label="הבא"
-          >
-            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={goToPrevious}
-            className="absolute top-1/2 -translate-y-1/2 right-2 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
-            aria-label="קודם"
-          >
-            <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        {/* Navigation Arrows - Outside Phone */}
+        <button
+          onClick={goToNext}
+          className="absolute top-1/2 -translate-y-1/2 -left-12 md:-left-14 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+          aria-label="הבא"
+        >
+          <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={goToPrevious}
+          className="absolute top-1/2 -translate-y-1/2 -right-12 md:-right-14 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white shadow-lg hover:shadow-xl border border-slate-200/50 flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+          aria-label="קודם"
+        >
+          <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
 
+        <div className="relative bg-white rounded-3xl border-2 border-slate-200 shadow-xl overflow-hidden h-[544px] md:h-[624px]">
           {/* WhatsApp Interface */}
           <div className="flex flex-col h-full" style={{ backgroundColor: '#efeae2' }}>
             {/* Header */}
@@ -386,20 +386,6 @@ const WhatsAppInterface = () => {
             {/* Status Bar (iPhone style) */}
             <div className="bg-[#075e54] text-white text-[8px] px-3 py-0.5 flex justify-between items-center">
               <span>16:38</span>
-              <div className="flex items-center gap-0.5">
-                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M1 9l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3z"/>
-                </svg>
-                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M1 9l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3z"/>
-                </svg>
-                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M2 22h20V2z"/>
-                </svg>
-                <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M1 9l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3zm4 0l2-2v7l-2-2v-3z"/>
-                </svg>
-              </div>
             </div>
 
             {/* Chat Area */}
@@ -548,7 +534,7 @@ function App() {
       <Section id="hero" className="pt-24 md:pt-32 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            מורידים עומס מהטלפון - בלי לשנות איך העסק עובד
+            שינוי גדול · אפס מאמץ
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-slate-200 leading-relaxed">
             פיילוט אוטומציה חכם לאלקטרו סליל שמטפל בשאלות חוזרות, מסנן פניות, ומשחרר את העובדים למכירה.
@@ -613,11 +599,7 @@ function App() {
               <strong className="text-slate-900 text-xl">עובד אנושי</strong> מטפל במכירות, הצעות מחיר, הנחות, קבלנים, וכל מה שדורש שיקול דעת ואחריות.
             </p>
           </div>
-          <div className="bg-blue-50 p-6 rounded-2xl border-r-4 border-amber-500">
-            <p className="text-lg text-slate-800 leading-relaxed font-semibold">
-              <strong className="text-xl">כל לקוח = עובד אחד אחראי</strong> כשיש צורך. לא בלגן, לא העברות, לא אובדן לקוח.
-            </p>
-          </div>
+
         </div>
       </Section>
 
@@ -728,7 +710,7 @@ function App() {
       {/* Pilot Section */}
       <Section id="pilot" className="bg-slate-50">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-slate-800">
-          מתחילים חכם. בלי מהפכה.
+          מתחילים חכם. פשוט.
         </h2>
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 mb-10">
@@ -902,7 +884,7 @@ function App() {
             <div className="text-3xl font-bold text-amber-600 mb-4">₪5,000</div>
             <p className="text-slate-700">חד-פעמי</p>
           </div>
-          <div className="bg-slate-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-2 border-blue-500">
+          <div className="bg-slate-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
             <h3 className="text-2xl font-bold mb-4 text-slate-800">מערכת מתקדמת</h3>
             <div className="text-3xl font-bold text-blue-600 mb-4">₪8,000–₪15,000</div>
             <p className="text-slate-700">שלב הבא, אופציונלי</p>
@@ -922,22 +904,15 @@ function App() {
       <Section id="contact" className="bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight">
-            זה לא שינוי גדול - זו בדיקה חכמה.
+            שינוי משמעותי. אפקטיבי. מורגש מהשבוע הראשון
           </h2>
           
           <div className="max-w-3xl mx-auto mb-10 space-y-6">
             <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
-              המטרה של הפיילוט היא לא להחליף עובדים,<br />
-              לא לשנות איך העסק עובד,<br />
-              ולא להתחייב למערכת גדולה.
-            </p>
-            
-            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
-              המטרה היא אחת:<br />
-              לבדוק בצורה רגועה ומדידה<br />
-              אם אוטומציה ממוקדת יכולה להוריד עומס,<br />
-              לשחרר עובדים למכירה,<br />
-              ולשפר את חוויית הלקוח ביומיום.
+              בודקים בצורה רגועה ומדידה<br />
+              איך אוטומציה ממוקדת מורידה עומס,<br />
+              משפרת שירות,
+              ועושה סדר ביומיום.
             </p>
           </div>
 
@@ -957,9 +932,7 @@ function App() {
             >
               קביעת שיחת החלטה (15 דק׳)
             </a>
-            <p className="text-slate-300 mt-4 text-lg">
-              פגישה קצרה. בלי לחץ. בלי התחייבות.
-            </p>
+   
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-slate-300 pt-8 border-t border-slate-700">
