@@ -17,7 +17,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <span className="text-xl font-bold text-slate-800">אלקטרו סליל</span>
           </div>
-          
+
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-reverse space-x-6">
             <button onClick={() => scrollTo('pain')} className="text-slate-700 hover:text-slate-900 transition text-sm">
@@ -142,9 +142,9 @@ const defaultDemoScenarios: DemoScenario[] = [
     title: 'הבוט ממקד את הצורך - בלי בילבול',
     messages: [
       { type: 'user_text', text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', time: '16:38' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?',
         time: '16:39',
         buttons: [
           { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
@@ -158,9 +158,9 @@ const defaultDemoScenarios: DemoScenario[] = [
     title: 'הצגת מוצר נבחר - בלי קטלוג עמוס',
     messages: [
       { type: 'user_text', text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', time: '16:38' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?',
         time: '16:39',
         buttons: [
           { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
@@ -169,9 +169,9 @@ const defaultDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', value: 'מקדחה רוטטת', choiceId: 'category_rotary', source: 'button', time: '16:40' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
+        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי',
         time: '16:40',
         buttons: [
           { id: 'action_product_page', title: 'לראות את דף המוצר באתר' },
@@ -184,9 +184,9 @@ const defaultDemoScenarios: DemoScenario[] = [
     title: 'הפניה לאתר - שליטה מלאה במחיר',
     messages: [
       { type: 'user_text', text: 'שלום,\nאני מחפש מקדחה / מברגה טובה לעבודה רצינית.\nיש לכם משהו של Bosch או DeWALT?', time: '16:38' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', 
+        text: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?',
         time: '16:39',
         buttons: [
           { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
@@ -195,9 +195,9 @@ const defaultDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', value: 'מקדחה רוטטת', choiceId: 'category_rotary', source: 'button', time: '16:40' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
+        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי',
         time: '16:40',
         buttons: [
           { id: 'action_product_page', title: 'לראות את דף המוצר באתר' },
@@ -226,9 +226,9 @@ const defaultDemoScenarios: DemoScenario[] = [
     title: 'מעבר לנציג - זרימה מלאה',
     messages: [
       { type: 'user_text', text: 'שלום, אני מעוניין לבדוק אפשרויות משלוח.', time: '16:38' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'בשמחה.\nאיזה מוצר אתה מעוניין להזמין?', 
+        text: 'בשמחה.\nאיזה מוצר אתה מעוניין להזמין?',
         time: '16:39',
         buttons: [
           { id: 'category_cordless', title: 'מברגה / מקדחה נטענת' },
@@ -237,9 +237,9 @@ const defaultDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'בשמחה.\nאיזה מוצר אתה מעוניין להזמין?', value: 'מקדחה רוטטת', choiceId: 'category_rotary', source: 'button', time: '16:40' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות', 
+        text: 'מעולה.\nיש לנו מספר דגמים מקצועיים.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות',
         time: '16:40',
         buttons: [
           { id: 'action_product_page', title: 'לראות את דף המוצר באתר' },
@@ -261,9 +261,9 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
     title: 'ביצוע הזמנה - חומרי בניין',
     messages: [
       { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', 
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
         time: '14:20',
         buttons: [
           { id: 'start_order', title: 'להתחיל הזמנה' },
@@ -271,9 +271,9 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'מי מבצע את ההזמנה?', 
+        text: 'מי מבצע את ההזמנה?',
         time: '14:21',
         buttons: [
           { id: 'client_contractor', title: 'קבלן' },
@@ -281,9 +281,9 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
         ]
       },
       { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'לאיזה סוג עבודה החומרים מיועדים?', 
+        text: 'לאיזה סוג עבודה החומרים מיועדים?',
         time: '14:22',
         buttons: [
           { id: 'work_framework', title: 'שלד' },
@@ -295,9 +295,9 @@ const constructionOrderDemoScenarios: DemoScenario[] = [
       { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
       { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
       { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
-      { 
+      {
         type: 'bot_buttons',
-        text: 'איך תרצה לקבל את החומרים?', 
+        text: 'איך תרצה לקבל את החומרים?',
         time: '14:25',
         buttons: [
           { id: 'delivery_pickup', title: 'איסוף עצמי' },
@@ -323,7 +323,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white" dir="rtl">
       <Navbar />
-      
+
       {/* Hero Section */}
       <Section id="hero" className="pt-24 md:pt-32 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
         <div className="text-center max-w-4xl mx-auto">
@@ -470,12 +470,23 @@ function App() {
         </div>
       </Section>
 
+      {/* Construction Order Demo Section */}
+      <Section id="demo-order" className="bg-slate-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-slate-800">
+          דמו: ביצוע הזמנה - חומרי בניין
+        </h2>
+        <p className="text-center text-lg text-slate-600 mb-8">
+          הרובוט מארגן את ההזמנה. העובד מאשר ושולח.
+        </p>
+        <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
+        <WhatsAppInterface scenarios={constructionOrderDemoScenarios} />
+      </Section>
+
       {/* Demo Section */}
       <Section id="demo" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800">
           דמו: חנות        </h2>
         <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
-        
         <WhatsAppInterface scenarios={defaultDemoScenarios} />
 
         {/* Flow Row */}
@@ -500,18 +511,7 @@ function App() {
         </div>
       </Section>
 
-      {/* Construction Order Demo Section */}
-      <Section id="demo-order" className="bg-slate-50">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-slate-800">
-          דמו: ביצוע הזמנה - חומרי בניין
-        </h2>
-        <p className="text-center text-lg text-slate-600 mb-8">
-          הרובוט מארגן את ההזמנה. העובד מאשר ושולח.
-        </p>
-        <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
-        
-        <WhatsAppInterface scenarios={constructionOrderDemoScenarios} />
-      </Section>
+
 
       {/* Pilot Section */}
       <Section id="pilot" className="bg-white">
@@ -575,41 +575,41 @@ function App() {
           <div
             onClick={() => setPriceMode('none')}
             className={`p-6 rounded-2xl border-2 cursor-pointer transition ${priceMode === 'none' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
-            }`}
+              }`}
           >
             <div className="flex items-center gap-3 mb-2">
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${priceMode === 'none' ? 'border-blue-500' : 'border-slate-300'
-              }`}>
+                }`}>
                 {priceMode === 'none' && <div className="w-3 h-3 rounded-full bg-blue-500" />}
               </div>
               <h3 className="text-xl font-bold text-slate-800">ללא מחיר</h3>
             </div>
             <p className="text-slate-700 mr-8">רק אישור מוצר + נציג מצטרף</p>
           </div>
-          
+
           <div
             onClick={() => setPriceMode('range')}
             className={`p-6 rounded-2xl border-2 cursor-pointer transition ${priceMode === 'range' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
-            }`}
+              }`}
           >
             <div className="flex items-center gap-3 mb-2">
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${priceMode === 'range' ? 'border-blue-500' : 'border-slate-300'
-              }`}>
+                }`}>
                 {priceMode === 'range' && <div className="w-3 h-3 rounded-full bg-blue-500" />}
               </div>
               <h3 className="text-xl font-bold text-slate-800">טווח / החל מ-</h3>
             </div>
             <p className="text-slate-700 mr-8">נותנים כיוון, שומרים גמישות</p>
           </div>
-          
+
           <div
             onClick={() => setPriceMode('qualified')}
             className={`p-6 rounded-2xl border-2 cursor-pointer transition ${priceMode === 'qualified' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 bg-white hover:border-slate-300'
-            }`}
+              }`}
           >
             <div className="flex items-center gap-3 mb-2">
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${priceMode === 'qualified' ? 'border-blue-500' : 'border-slate-300'
-              }`}>
+                }`}>
                 {priceMode === 'qualified' && <div className="w-3 h-3 rounded-full bg-blue-500" />}
               </div>
               <h3 className="text-xl font-bold text-slate-800">מחיר לאחר סינון</h3>
@@ -706,7 +706,7 @@ function App() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-tight">
             שינוי משמעותי. אפקטיבי. מורגש מהשבוע הראשון
           </h2>
-          
+
           <div className="max-w-3xl mx-auto mb-10 space-y-6">
             <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
               בודקים בצורה רגועה ומדידה<br />
