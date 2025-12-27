@@ -168,7 +168,7 @@ const defaultDemoScenarios: DemoScenario[] = [
           { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
         ]
       },
-      { type: 'user_choice', choiceTitle: 'מקדחה רוטטת', choiceId: 'category_rotary', choiceSource: 'button', time: '16:40' },
+      { type: 'user_reply_selection', replyToText: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', value: 'מקדחה רוטטת', choiceId: 'category_rotary', source: 'button', time: '16:40' },
       { 
         type: 'bot_buttons',
         text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
@@ -194,7 +194,7 @@ const defaultDemoScenarios: DemoScenario[] = [
           { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
         ]
       },
-      { type: 'user_choice', choiceTitle: 'מקדחה רוטטת', choiceId: 'category_rotary', choiceSource: 'button', time: '16:40' },
+      { type: 'user_reply_selection', replyToText: 'בשמחה.\nכדי לדייק, איזה סוג אתה מחפש?', value: 'מקדחה רוטטת', choiceId: 'category_rotary', source: 'button', time: '16:40' },
       { 
         type: 'bot_buttons',
         text: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', 
@@ -204,7 +204,7 @@ const defaultDemoScenarios: DemoScenario[] = [
           { id: 'action_quote_request', title: 'לקבל הצעת מחיר מנציג' }
         ]
       },
-      { type: 'user_choice', choiceTitle: 'לראות את דף המוצר באתר', choiceId: 'action_product_page', choiceSource: 'button', time: '16:41' },
+      { type: 'user_reply_selection', replyToText: 'מעולה.\nיש לנו מספר דגמים מקצועיים של DeWALT.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות\nמתאים לעבודות קשות ושימוש יומיומי', value: 'לראות את דף המוצר באתר', choiceId: 'action_product_page', source: 'button', time: '16:41' },
       {
         type: 'bot_link',
         text: 'בשמחה.\nזה דף המוצר באתר עם כל המפרט:',
@@ -236,7 +236,7 @@ const defaultDemoScenarios: DemoScenario[] = [
           { id: 'category_hammer', title: 'פטישון לעבודות בטון' }
         ]
       },
-      { type: 'user_choice', choiceTitle: 'מקדחה רוטטת', choiceId: 'category_rotary', choiceSource: 'button', time: '16:40' },
+      { type: 'user_reply_selection', replyToText: 'בשמחה.\nאיזה מוצר אתה מעוניין להזמין?', value: 'מקדחה רוטטת', choiceId: 'category_rotary', source: 'button', time: '16:40' },
       { 
         type: 'bot_buttons',
         text: 'מעולה.\nיש לנו מספר דגמים מקצועיים.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות', 
@@ -246,7 +246,7 @@ const defaultDemoScenarios: DemoScenario[] = [
           { id: 'action_quote_request', title: 'לקבל הצעת מחיר מנציג' }
         ]
       },
-      { type: 'user_choice', choiceTitle: 'לקבל הצעת מחיר מנציג', choiceId: 'action_quote_request', choiceSource: 'button', time: '16:41' },
+      { type: 'user_reply_selection', replyToText: 'מעולה.\nיש לנו מספר דגמים מקצועיים.\nאחד הדגמים המבוקשים:\n\nמברגה / מקדחה רוטטת 18V XRP\nדגם: DCD996P2\nכולל 2 סוללות', value: 'לקבל הצעת מחיר מנציג', choiceId: 'action_quote_request', source: 'button', time: '16:41' },
       { type: 'bot_text', text: 'מצוין.\nלצורך הצעת מחיר מדויקת, באיזו עיר אתה נמצא?', time: '16:41' },
       { type: 'user_text', text: 'תל אביב', time: '16:42' },
       { type: 'bot_text', text: 'תודה.\nמחבר אותך לנציג שיאשר זמינות, מחיר ואפשרויות משלוח.\nרגע אחד…', time: '16:42' },

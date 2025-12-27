@@ -13,7 +13,7 @@ export interface Button {
   title: string
 }
 
-export type MessageType = 'bot_text' | 'bot_buttons' | 'user_choice' | 'user_text' | 'bot_link'
+export type MessageType = 'bot_text' | 'bot_buttons' | 'user_reply_selection' | 'user_text' | 'bot_link'
 
 export interface Message {
   type: MessageType
@@ -21,10 +21,11 @@ export interface Message {
   time: string
   // For bot_buttons and bot_link
   buttons?: Button[]
-  // For user_choice
-  choiceTitle?: string
+  // For user_reply_selection
+  replyToText?: string
+  value?: string
   choiceId?: string
-  choiceSource?: 'button' | 'list'
+  source?: 'button' | 'list'
   // For bot_link
   linkPreview?: LinkPreviewData
 }
@@ -251,35 +252,53 @@ export const WhatsAppInterface = ({
                 {/* Demo Messages */}
                 {currentScenario.messages.map((message, idx) => {
                   // Determine if message is from customer or bot based on type
-                  const isCustomer = message.type === 'user_choice' || message.type === 'user_text'
+                  const isCustomer = message.type === 'user_reply_selection' || message.type === 'user_text'
                   
                   // Track selected button IDs to hide them in subsequent messages
                   const selectedButtonIds = new Set<string>()
                   for (let i = 0; i < idx; i++) {
                     const prevMsg = currentScenario.messages[i]
-                    if (prevMsg.type === 'user_choice' && prevMsg.choiceId) {
+                    if (prevMsg.type === 'user_reply_selection' && prevMsg.choiceId) {
                       selectedButtonIds.add(prevMsg.choiceId)
                     }
                   }
                   
                   return (
                     <div key={idx} className={`flex ${isCustomer ? 'justify-end' : 'justify-start'}`}>
-                      {message.type === 'user_choice' ? (
-                        // User choice - render as chip bubble
+                      {message.type === 'user_reply_selection' ? (
+                        // User reply selection - render as WhatsApp reply style
                         <div className="max-w-[75%]">
-                          <div className="bg-blue-50 border border-blue-200/60 rounded-full px-4 py-2 inline-block shadow-sm">
-                            <div className="flex items-center gap-2">
-                              <span className="text-[10px] text-blue-600/70 font-medium">נבחר</span>
-                              <span className="text-xs text-blue-800 font-medium">{message.choiceTitle}</span>
+                          <div className="bg-[#dcf8c6] text-slate-800 rounded-lg px-2.5 py-1.5 shadow-sm">
+                            {/* Quoted message header (WhatsApp reply style) */}
+                            {message.replyToText && (
+                              <div className="mb-1.5 pb-1.5 border-b border-slate-300/50">
+                                <div className="flex items-start gap-1.5">
+                                  {/* Vertical accent line (WhatsApp style) */}
+                                  <div className="w-0.5 bg-slate-400 rounded-full mt-0.5 flex-shrink-0" style={{ minHeight: '24px' }}></div>
+                                  {/* Quoted text */}
+                                  <div className="flex-1 min-w-0">
+                                    <div className="text-[10px] text-slate-600/90 line-clamp-2 break-words">
+                                      {message.replyToText}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+                            {/* Selected value */}
+                            {message.value && (
+                              <div className="text-xs whitespace-pre-line break-words">
+                                {message.value}
+                              </div>
+                            )}
+                            {/* Time and checkmark */}
+                            <div className="text-[8px] text-slate-500 mt-0.5 text-left">
+                              {message.time}
+                              <span className="mr-0.5">
+                                <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                </svg>
+                              </span>
                             </div>
-                          </div>
-                          <div className="text-[8px] text-slate-500 mt-1 text-left">
-                            {message.time}
-                            <span className="mr-0.5">
-                              <svg className="w-2.5 h-2.5 inline" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                              </svg>
-                            </span>
                           </div>
                         </div>
                       ) : (
@@ -310,7 +329,7 @@ export const WhatsAppInterface = ({
                               image={message.linkPreview.image}
                             />
                           )}
-                          {/* Quick Reply Buttons - only show unselected buttons */}
+                          {/* Quick Reply Buttons - hide after selection (only show unselected buttons) */}
                           {(message.type === 'bot_buttons' || message.type === 'bot_link') && message.buttons && message.buttons.length > 0 && (
                             <div className="mt-2 pt-2 border-t border-slate-200/30 space-y-1.5">
                               {message.buttons
