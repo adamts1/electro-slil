@@ -26,7 +26,7 @@ const Navbar = () => {
             <button onClick={() => scrollTo('solution')} className="text-slate-700 hover:text-slate-900 transition text-sm">
               פתרון
             </button>
-            <button onClick={() => scrollTo('demo')} className="text-slate-700 hover:text-slate-900 transition text-sm">
+            <button onClick={() => scrollTo('demo1')} className="text-slate-700 hover:text-slate-900 transition text-sm">
               דמו
             </button>
             <button onClick={() => scrollTo('pilot')} className="text-slate-700 hover:text-slate-900 transition text-sm">
@@ -258,7 +258,278 @@ const defaultDemoScenarios: DemoScenario[] = [
 // Construction Materials Order Demo Scenarios
 const constructionOrderDemoScenarios: DemoScenario[] = [
   {
-    title: 'ביצוע הזמנה - חומרי בניין',
+    title: 'התחלת הזמנה',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'זיהוי סוג לקוח',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      {
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?',
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'סוג עבודה',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      {
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?',
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
+      {
+        type: 'bot_buttons',
+        text: 'לאיזה סוג עבודה החומרים מיועדים?',
+        time: '14:22',
+        buttons: [
+          { id: 'work_framework', title: 'שלד' },
+          { id: 'work_plaster', title: 'טיח / גמר' },
+          { id: 'work_waterproofing', title: 'איטום' },
+          { id: 'work_general', title: 'כללי / אחר' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'רשימת חומרים',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      {
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?',
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
+      {
+        type: 'bot_buttons',
+        text: 'לאיזה סוג עבודה החומרים מיועדים?',
+        time: '14:22',
+        buttons: [
+          { id: 'work_framework', title: 'שלד' },
+          { id: 'work_plaster', title: 'טיח / גמר' },
+          { id: 'work_waterproofing', title: 'איטום' },
+          { id: 'work_general', title: 'כללי / אחר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
+      { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
+      { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' }
+    ]
+  },
+  {
+    title: 'אפשרויות משלוח',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      {
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?',
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
+      {
+        type: 'bot_buttons',
+        text: 'לאיזה סוג עבודה החומרים מיועדים?',
+        time: '14:22',
+        buttons: [
+          { id: 'work_framework', title: 'שלד' },
+          { id: 'work_plaster', title: 'טיח / גמר' },
+          { id: 'work_waterproofing', title: 'איטום' },
+          { id: 'work_general', title: 'כללי / אחר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
+      { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
+      { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
+      {
+        type: 'bot_buttons',
+        text: 'איך תרצה לקבל את החומרים?',
+        time: '14:25',
+        buttons: [
+          { id: 'delivery_pickup', title: 'איסוף עצמי' },
+          { id: 'delivery_site', title: 'משלוח לאתר' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'פרטי משלוח',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      {
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?',
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
+      {
+        type: 'bot_buttons',
+        text: 'לאיזה סוג עבודה החומרים מיועדים?',
+        time: '14:22',
+        buttons: [
+          { id: 'work_framework', title: 'שלד' },
+          { id: 'work_plaster', title: 'טיח / גמר' },
+          { id: 'work_waterproofing', title: 'איטום' },
+          { id: 'work_general', title: 'כללי / אחר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
+      { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
+      { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
+      {
+        type: 'bot_buttons',
+        text: 'איך תרצה לקבל את החומרים?',
+        time: '14:25',
+        buttons: [
+          { id: 'delivery_pickup', title: 'איסוף עצמי' },
+          { id: 'delivery_site', title: 'משלוח לאתר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'איך תרצה לקבל את החומרים?', value: 'משלוח לאתר', choiceId: 'delivery_site', source: 'button', time: '14:26' },
+      { type: 'bot_text', text: 'לאיזו כתובת לשלוח ומתי זה צריך להגיע?', time: '14:26' },
+      { type: 'user_text', text: 'אתר בנייה - אזור תעשייה חולון\nצריך מחר עד 09:00', time: '14:27' }
+    ]
+  },
+  {
+    title: 'סיכום ומעבר לנציג',
+    messages: [
+      { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
+      {
+        type: 'bot_buttons',
+        text: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.',
+        time: '14:20',
+        buttons: [
+          { id: 'start_order', title: 'להתחיל הזמנה' },
+          { id: 'talk_agent', title: 'לדבר עם נציג' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מעולה 👍\nנבנה הזמנה מסודרת כדי שנוכל לטפל בה מהר.', value: 'להתחיל הזמנה', choiceId: 'start_order', source: 'button', time: '14:21' },
+      {
+        type: 'bot_buttons',
+        text: 'מי מבצע את ההזמנה?',
+        time: '14:21',
+        buttons: [
+          { id: 'client_contractor', title: 'קבלן' },
+          { id: 'client_private', title: 'לקוח פרטי' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'מי מבצע את ההזמנה?', value: 'קבלן', choiceId: 'client_contractor', source: 'button', time: '14:22' },
+      {
+        type: 'bot_buttons',
+        text: 'לאיזה סוג עבודה החומרים מיועדים?',
+        time: '14:22',
+        buttons: [
+          { id: 'work_framework', title: 'שלד' },
+          { id: 'work_plaster', title: 'טיח / גמר' },
+          { id: 'work_waterproofing', title: 'איטום' },
+          { id: 'work_general', title: 'כללי / אחר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'לאיזה סוג עבודה החומרים מיועדים?', value: 'טיח / גמר', choiceId: 'work_plaster', source: 'button', time: '14:23' },
+      { type: 'bot_text', text: 'כתוב לי בבקשה את רשימת החומרים והכמויות\n(אפשר חופשי, בשורות)', time: '14:23' },
+      { type: 'user_text', text: 'סיליקון ניטרלי Soudal - 20 יח׳\nחול ים - 3 קוב\nחצץ 4-8 - 2 קוב\nמלט אפור - 40 שק\nבלוקים 20 - 120 יח׳\nרשת טיח - 10 גלילים', time: '14:24' },
+      {
+        type: 'bot_buttons',
+        text: 'איך תרצה לקבל את החומרים?',
+        time: '14:25',
+        buttons: [
+          { id: 'delivery_pickup', title: 'איסוף עצמי' },
+          { id: 'delivery_site', title: 'משלוח לאתר' }
+        ]
+      },
+      { type: 'user_reply_selection', replyToText: 'איך תרצה לקבל את החומרים?', value: 'משלוח לאתר', choiceId: 'delivery_site', source: 'button', time: '14:26' },
+      { type: 'bot_text', text: 'לאיזו כתובת לשלוח ומתי זה צריך להגיע?', time: '14:26' },
+      { type: 'user_text', text: 'אתר בנייה - אזור תעשייה חולון\nצריך מחר עד 09:00', time: '14:27' },
+      { type: 'bot_text', text: 'סיכום ההזמנה 👇\n• סיליקון ניטרלי Soudal - 20 יח׳\n• חול ים - 3 קוב\n• חצץ 4-8 - 2 קוב\n• מלט אפור - 40 שק\n• בלוקים 20 - 120 יח׳\n• רשת טיח - 10 גלילים\n• משלוח - חולון\n• דחיפות: מחר עד 09:00\n\nמעביר לנציג לאישור ושליחה.', time: '14:28' }
+    ]
+  },
+  {
+    title: 'נציג אנושי מאשר ושולח',
     messages: [
       { type: 'user_text', text: 'שלום, צריך להזמין חומרים לאתר', time: '14:20' },
       {
@@ -471,7 +742,7 @@ function App() {
       </Section>
 
       {/* Construction Order Demo Section */}
-      <Section id="demo-order" className="bg-slate-50">
+      <Section id="demo1" className="bg-slate-50">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-slate-800">
           דמו: ביצוע הזמנה - חומרי בניין
         </h2>
@@ -483,7 +754,7 @@ function App() {
       </Section>
 
       {/* Demo Section */}
-      <Section id="demo" className="bg-white">
+      <Section id="demo2" className="bg-white">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-slate-800">
           דמו: חנות        </h2>
         <p className="text-center text-sm text-slate-500 mb-8">*המחשה של החוויה - לא מערכת חיה*</p>
